@@ -21,8 +21,7 @@ export default async function generateSitemap(request, context) {
     xml += '  <url>\n';
     xml += '    <loc>${host}${page.path}</loc>\n';
     if (page.lastmod) {
-      xml += '    <lastmod>${new Date(page.lastmod).toISOString().split(\'T\')[0]}</lastmod>\n';
-    }
+        xml += `    <lastmod>${new Date(page.lastmod).toISOString().split('T')[0]}</lastmod>\n`;    }
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '  </url>\n';
   });
